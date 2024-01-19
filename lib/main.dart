@@ -4,14 +4,29 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
 
-  // This widget is the root of your application.
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Text("Adil"),
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+        ),
+        body: Container(
+          color: Colors.orange,
+          child: Text(
+            "Adil",
+            style: TextStyle(fontSize: 40.0),
+          ),
+        ),
+      ),
     );
   }
 }
